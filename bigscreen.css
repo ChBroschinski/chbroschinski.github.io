@@ -1,0 +1,405 @@
+:root { /*IMPORTANT: need to set opacity in the colors*/
+    /*Font Colors*/
+    --Link: #3f2727;
+    --Link-Hover: #644343;
+    --Text: #0f0f0f;
+    --Bold: #0f0f0f;
+    --Italics: #3f2727;
+    --Shadow: #3d2828d2; /*Font shadow*/
+    /*Font settings*/
+    --Font: Verdana, Source Sans Pro;
+    --Font-Size-Main: 16px;
+    /*Background*/
+    --Background-Image: url("background.png");
+    --Background-Color: #2c2422;
+    /*Sidebar*/
+    --Sidebar-Height: 0px; /*60px,0px : margin-top of sidebar*/ 
+    --Sidebar-Title: "Goergia";
+    --Sidebar-Color: #8a7878de;
+    --Sidebar-Hover: #8a7878;
+    --Sidebar-Links: #4d3232;
+    /*Body*/
+    --Body-Background: #5a4a4ade;
+    --Body-Foreground: #5a4a4a;
+    --Body-Width: 10000px; /*450px;500px;540px;600px;650px*/
+    --Body-Unfocused: 1; /*Regular transparency*/
+    --Body-Hover: 1; /*Hover transparency*/
+}
+
+*
+{ 
+    font-family: var(--Font) ,sans-serif;
+    font-size: var(--Font-Size-Main);
+    color: var(--Text);
+    text-align: left;
+}
+
+body
+{
+    background-color: var(--Background-Color);
+    /*background-image: var(--Background-Image);*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+    margin: 0;
+    /*margin-left: 3%;*/
+    /*margin-right: 3%;*/
+   
+    word-wrap: break-word;
+}
+
+b, strong { /*Bold*/
+    text-shadow: 3px 3px 10px var(--Shadow) !important;
+    color: var(--Bold);
+}
+i, em { /*Italics*/
+    color: var(--Italics);
+}
+small, sub, sup { /*Small text*/
+    font-size: calc(var(--Font-Size-Main) - 0.3em);
+    vertical-align:baseline;
+}
+a { /*Links*/
+    color: var(--Link);
+    text-decoration: none;
+    
+    text-shadow: 3px 3px 10px var(--Shadow)
+}
+a:hover {
+    color: var(--Link-Hover);
+}
+
+#content {
+    margin: 60px 60px 60px 460px;
+    background-color: var(--Sidebar-Color);
+}
+.tab {
+    padding: 1em;
+}
+
+h1
+{
+    text-align: center;
+}
+
+h2
+{
+    text-align: center;
+}
+
+/*Class for centering images*/
+.center
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /*If you want your images to be perfectly square, remove the border-radius bit*/
+}
+
+/*Classes for the download button*/
+.download {
+    display: inline;
+    text-align: center;
+    padding: 0.3em;
+    border-bottom: 0.2em solid var(--Sidebar-Links);
+    max-width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ /* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    float: left;
+    width: 48%;
+    padding: 1%;
+}
+.threecolumn {
+    float:left;
+    width: 31%;
+    padding: 1%;
+}
+  
+  /* Clear floats after image containers */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+} 
+.singleimage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+img {
+    width: 100%;
+}
+.container {
+    width: 100%;
+    overflow: hidden;
+}
+.paragraphimage {
+    width: 20%;
+    float: right;
+    margin-left: 20px;
+    margin-top: 1em;
+}
+
+/*SIDEBAR*/
+#sidebar {
+    background: var(--Sidebar-Color);
+    min-height: 100% !important;
+    height: 100%;
+    width: 260px;
+    position: fixed;
+    left: 100px;
+    top:0px;
+    padding: 20px;
+    margin-top: var(--Sidebar-Height);
+    display: block;
+    visibility: visible;
+}
+#sidebar:hover {
+    background: var(--Sidebar-Hover);
+}
+#sidebar .icon { /*Icon*/
+    border-radius: 5%;
+    max-width: min(70%, 6em);
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#sidebar .title {
+    font-size: calc(var(--Font-Size-Main) + 0.7em);
+    font-family: var(--Sidebar-Title);
+    text-align: center;
+    padding: 20px;
+}
+#sidebar .description {
+    text-align: justify;
+    padding:5px;
+    line-height:100%;
+}
+
+
+/*SIDEBAR BUTTON*/
+.button {visibility: hidden;}
+
+
+
+/*Lists*/
+ul#linktabs {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    width: 260px;
+}
+ul#linktabs li {
+    background-color: transparent;
+    border: solid 0px #262626;
+    padding: 5px 20px;
+    margin-bottom: 4px;
+    color: var(--Text);
+    cursor: pointer;
+    text-align: center;
+}
+ul#linktabs li:hover, ul#linktabs li.active {
+    color: var(--Sidebar-Hover);
+    background-color: var(--Sidebar-Links);
+}
+
+ul {
+    padding-left: inherit;
+}
+
+/*Blockquotes*/
+q, blockquote {
+    quotes: "「" "」"  "（" "）" ;
+    position: relative;
+    margin: 0.5em;
+    padding: 0px;
+}
+q p, blockquote p,q div, blockquote div {
+    display: inline-block;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+q p:not(:last-child)::after,
+blockquote p:not(:last-child)::after,
+q div:not(:last-child)::after,
+blockquote div:not(:last-child)::after {
+    content:"\a";
+    display: inline;
+    white-space: pre;
+}
+q:before, blockquote:before,
+q:after, blockquote:after {
+    color: var(--Text);
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5em;
+}
+q:before,
+blockquote:before {
+    content: open-quote;
+    margin-left: -0.9em;
+    margin-top: -0.2em;
+    top:0;
+    text-shadow: 0px 0px 1px rgba(var(--Text), 1);
+}
+q:after, blockquote:after {
+    content: close-quote;
+    margin-left:-0.1em;
+    margin-top:-0.2em;
+    bottom:-0.2em;
+} 
+blockquote blockquote {
+    margin: 0;
+    padding: 2px;
+}
+blockquote blockquote:before,
+blockquote blockquote:after {
+    position:relative;
+    margin:0;
+    bottom:0;
+}
+
+/*WEBRING*/
+#webring
+{
+    display: flex;
+    align-items:center;
+    margin: 0.2em;
+    border-bottom: 0.2em solid var(--Sidebar-Links);
+}
+#webringlinks
+{
+    margin-left: 1em;
+}
+img.webring
+{
+    margin-right: 1em;
+    margin-left: 1em;
+    border-radius: 50%;
+    width: 50%;
+    max-width: min(50%, 3em);
+    height: auto;
+}
+
+
+/* Slideshow container */
+.stretchy-wrapper {
+    width: 80%;
+	/*padding-bottom: 35%; /* 2:1 aspect ratio*/
+    padding-bottom: 45%;
+	position: relative;
+    margin-left: 10%;
+    overflow: hidden;
+}
+.slideshow-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.slideImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.slideVideo {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+/* Hide the images by default */
+.mySlides2 {
+    display: none;
+}
+.mySlides1 {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  text-shadow: 3px 3px 10px #0f0f0f, 3px 3px 10px #0f0f0f, 3px 3px 10px #0f0f0f, 3px 3px 10px #0f0f0f;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: auto;
+  width: 5em;
+  margin: 0 2px;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.dot > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+    object-position: center;
+    filter: opacity(70%);
+}
+.dot > img:hover {
+    filter: none;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.0s;
+}
+
+@keyframes fade {
+  from {opacity: .7}
+  to {opacity: 1}
+}

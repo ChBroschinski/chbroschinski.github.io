@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Portfolio</title> <!--Tab title-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Style sheet-->
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="bigscreen.css">
+    <link rel="stylesheet" media="screen and (max-width: 899px)" href="smallscreen.css">
+    <!--<link rel="shortcut icon" type="image/x-icon" href="img/icon.png"> <!--Use drawn icon as favicon-->
+
+    <!--Reference info that shows up if the page is linked-->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Project Portfolio"/> <!--Same as Tab title-->
+    <meta property="og:description" content="Page for programming projects."/>
+    <meta property="og:url" content="https://chbroschinski.github.io/index.html"/>
+    <script src="js/tabs.js"></script>
+</head>
+
+<!--MAIN WEBPAGE CONTENT-->
+
+<body>
+    <div id="webpage">
+        <button id="toggleSidebarButton" class="button" style="vertical-align:middle"><span style="color: antiquewhite;">Menu </span></button> <!-- Button to toggle sidebar -->
+        <div id="header"></div>
+        <div id="menu">
+            <div class="blocker"></div> <!-- Detects clicks outside of sidebar-->
+            <div id="sidebar">
+                <!--THIS IS THE SIDEBAR-->
+                <!--Icon/Title/Description-->
+                <!--<img class="icon" src="img/icon.png">-->
+                <div class="title"><a href="/">Project Portfolio</a></div>
+                <div class="description">
+                    <p>Studying game development, mainly Unity Engine & C#.<br/>But always open to learning new skills.</p>
+                </div>
+                <!--Page tabs-->
+                <ul id="linktabs">
+                    <li class="tablinks" id="home">Home</li>
+                    <li class="tablinks" id="hysterie">Hysterie</li>
+                    <li class="tablinks" id="fungustakeover">FungusTakeover</li>
+                    <li class="tablinks" id="anjellyca">Anjellyca</li>
+                    <li class="tablinks" id="monsterprincess">Monster Princess</li>
+                </ul>
+            </div>
+        </div>
+        <script> //script to toggle sidebar (credit: allenhwkim.medium)
+            const sidebar = document.querySelector('#menu');
+            const menubutton = document.querySelector('#toggleSidebarButton');
+            sidebar.querySelector('.blocker').onclick = hide;
+            function show() { // swipe right
+                sidebar.classList.add('visible');
+                menubutton.classList.add('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function hide() { // by blocker click, swipe left, or url change
+                sidebar.classList.remove('visible');
+                menubutton.classList.remove('hidden');
+                document.body.style.overflow = '';
+            }
+
+            function toggle() {
+                sidebar.classList.contains('visible') ? hide() : show(); // Toggle sidebar on mobile devices
+            }
+
+            // Toggle sidebar when button is clicked
+            document.getElementById('toggleSidebarButton').addEventListener('click', toggle);
+        </script>
+        <!--HERE COMES THE ACTUAL INFO PAGES-->
+        <div id="content">
+            <div project-id="home" class="tab">
+                <!-- Introduction to Unity projects-->
+                <h2>Video Game Projects</h2>
+                <p>
+                    All games listed are student projects created in the effort to learn game development.
+                    The games were created with 4-7 person teams in the span of one Semester.
+                    My roles were mainly feature programmer or main programmer, and all the assets created by me are respectively listed on
+                    their dedicated pages.<br>
+                    If you are feeling a bit adventurous why not give them a try?
+                    <!--About me section-->
+                    <h2>About me</h2>
+                    <div class="row">
+                        <div class="column">
+                            <div class="container">
+                                <img class="paragraphimage" src="img/profile_icon.jpg">
+                                <p>
+                                    I'm Chisaki Broschinski, currently studying Animation and Game at the Hochschule-Darmstadt. While I do have skills in animation and illustration, I focus mainly on game programming.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <p>
+                                <ul>
+                                    <li>Unity C# - Visual Studio/Visual Studio Code</li>
+                                    <li>Experience in C++/Java/Html/CSS/Python</li>
+                                    <li>Experience in stylized 2D/3D animation - Blender/Maya</li>
+                                    <li>Stylized Illustration - Clip Studio Paint/Photoshop</li>
+                                    <li>Fluent in English and German</li>
+                                    <li>Personal weakness: Color choices</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <h2>Contact</h2>
+                    <div class="row">
+                        <div class="threecolumn">
+                            <p>E-MAIL: <a href="mailto:chi.broschinski@gmail.com">chi.broschinski@gmail.com</a></p>
+                        </div>
+                        <div class="threecolumn">
+                            <p>LINKEDIN: <a href="https://www.linkedin.com/in/chisaki-broschinski-83a520298/">chisaki-broschinski-83a520298</a></p>
+                        </div>
+                        <div class="threecolumn">
+
+                        </div>
+                    </div>
+            </div>
+            <div project-id="hysterie" class="tab">
+                <h1>Hysterie</h1>
+                <!--Slideshow-->
+                <div class="stretchy-wrapper">
+                    <div class="slideshow-container">
+                        <div class="mySlides1 fade">
+                            <iframe class="slideVideo Video" src="https://drive.google.com/file/d/1asFX0krobPWpoeywKdB80SXnRoUZB5DW/preview"></iframe>
+                        </div>
+                        <div class="mySlides1 fade">
+                            <iframe class="slideVideo Video" src="https://www.youtube-nocookie.com/embed/P4n38xk47Wc?si=BgKGxgoLd8U339nx&origin=https://chbroschinski.github.io" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1,0)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1,0)">&#10095;</a>
+                    </div>
+                </div>
+                <br>
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1, 0)"><img src="img/hysterie_trailer.png"></span>
+                    <span class="dot" onclick="currentSlide(2, 0)"><img src="img/hysterie_contributions.png"></span>
+                </div>
+                <p><div class="download"><a href="https://acariia.itch.io/hysterie">Download Hysterie on Itch.io</a></div></p>
+                <h2>Description</h2>
+                <p>
+                    <i>
+                        “The womb is a creature that lives within the body of a woman, and when it is not pregnant, it becomes restless and wanders about.”
+                        <br>– Plato, Timaeus
+                    </i>
+                </p>
+                <p>
+                    We want to educate and raise awareness of the helplessness and cruel treatment of women who were diagnosed with hysteria around the late 19th century.
+                    <br><br>By freeing themselves from wrong, old-fashioned perceptions of society, players embark on a journey to uncover the horrifying truths of women's abuse.
+                    Humanizing patients, they get encouraged to reflect on the past critically.
+                </p>
+                <h2>Specifications</h2>
+                <p>
+                    <ul>
+                        <li>Platform: Windows/Linux</li>
+                        <li>Controls: Mouse</li>
+                        <li>Developed with Unity engine and Adventure Creator</li>
+                    </ul>
+                </p>
+                <h2>Credits</h2>
+                <p>
+                    <ul>
+                        <li>
+                            Alessia Brinkmann: <a href="https://www.linkedin.com/in/alessia-brinkmann-197a57298/">Linkedin</a><br>
+                            Roles - Animator, Game Designer
+                        </li>
+                        <li>
+                            Annabelle Räth: <a href="https://www.linkedin.com/in/annabelle-r%C3%A4th/">Linkedin</a><br>
+                            Roles -  Background Artist, UI Art, Sounds, Project Manager
+                        </li>
+                        <li>
+                            Rina Prjanikov: <a href="https://www.linkedin.com/in/karina-prjanikov-12574b278/">Linkedin</a><br>
+                            Roles - Narrative Designer, Character Designer
+                        </li>
+                        <li>
+                            Jessica Wittich: <a href="https://www.linkedin.com/in/jessica-wittich-52aab2228/">Linkedin</a><br>
+                            Roles -  Design Director, Narrative Design Director, Sound Design Director
+                        </li>
+                        <li>
+                            Chisaki Broschinski: <a href="https://www.linkedin.com/in/chisaki-broschinski-83a520298/">Linkedin</a><br>
+                            Roles - Main Programmer
+                        </li>
+                    </ul>
+                </p>
+                <h2>Personal contributions</h2>
+                <p>
+                    <ul>
+                        <li>Implementation, setup and custom actions for the Adventure Creator</li>
+                        <li>Bugfixing support for everything</li>
+                    </ul>
+                </p>
+            </div>
+            <div project-id="fungustakeover" class="tab">
+                <h1>FungusTakeover - spore your own army!</h1>
+                <!--Slideshow-->
+                <div class="stretchy-wrapper">
+                    <div class="slideshow-container">
+                        <div class="mySlides2 fade">
+                            <iframe class="slideVideo Video" src="https://www.youtube-nocookie.com/embed/_yehP1gw20U?si=wVnYT46-Z28h5urV&origin=https://chbroschinski.github.io" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="mySlides2 fade">
+                            <iframe class="slideVideo Video" src="https://www.youtube-nocookie.com/embed/xBLezJJ9LVE?si=tm0yAWfT7R2c32RF&origin=https://chbroschinski.github.io" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1,1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1,1)">&#10095;</a>
+                    </div>
+                </div>
+                <br>
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1, 1)"><img src="img/fungustakeover_trailer.png"></span>
+                    <span class="dot" onclick="currentSlide(2, 1)"><img src="img/fungustakeover_contributions.png"></span>
+                </div>
+                <p><div class="download"><a href="https://sh4d0w-19.itch.io/fungus-takeover">Download FungusTakeover on Itch.io</a></div></p>
+                <h2>Description</h2>
+                <p>
+                    <i>
+                        
+                    </i>
+                </p>
+                <p>
+                    
+                </p>
+                <h2>Specifications</h2>
+                <p>
+                    <ul>
+                        <li>Platform: Windows/Mac</li>
+                        <li>Controls: Controller/Mouse & Keyboard</li>
+                        <li>Developed with Unity engine</li>
+                    </ul>
+                </p>
+                <h2>Credits</h2>
+                <p>
+                    <ul>
+                        <li>
+                            Anastasia Schleicher: <a href="https://www.linkedin.com/in/anastasia-schleicher/">Linkedin</a><br>
+                            Roles - Game Designer, Setdresser
+                        </li>
+                        <li>
+                            Rina Prjanikov: <a href="https://www.linkedin.com/in/karina-prjanikov-12574b278/">Linkedin</a><br>
+                            Roles -  3D Character Artist, Sound Manager
+                        </li>
+                        <li>
+                            Liam Hermann: <a href="https://www.linkedin.com/in/liam-hermann-050008288/">Linkedin</a><br>
+                            Roles - Generalist, 3D Animator, Project Manager
+                        </li>
+                        <li>
+                            Max Gundermann: <a href="https://www.linkedin.com/in/max-gundermann/">Linkedin</a><br>
+                            Roles - 3D Generalist, VFX Artist, Usertest Coordinator
+                        </li>
+                        <li>
+                            Mike Li: <a href="https://www.linkedin.com/in/mike-li-942325299/">Linkedin</a><br>
+                            Roles - Systems Programmer, UI/UX Designer, Version Control Manager
+                        </li>
+                        <li>
+                            Saskia Hirschmann: <a href="https://www.linkedin.com/in/saskia-hirschmann-69aa78299/">Linkedin</a><br>
+                            Roles - 3D Environment Artist, Project Manager
+                        </li>
+                        <li>
+                            Anthea Wolf: <a href="https://www.linkedin.com/in/yasmin-anthea-wolf/">Linkedin</a><br>
+                            Roles - Art Director
+                        </li>
+                        <li>
+                            Aleksa Savic: <a href="https://linktr.ee/AleksaSavic">Linktree</a><br>
+                            Roles - Technical Director
+                        </li>
+                        <li>
+                            Julius Braun, Lilith Hartmann, Lisbeth Hildebrandt:<br>
+                            Roles - Sound
+                        </li>
+                        <li>
+                            Chisaki Broschinski: <a href="https://www.linkedin.com/in/chisaki-broschinski-83a520298/">Linkedin</a><br>
+                            Roles - Feature Programmer
+                        </li>
+                    </ul>
+                </p>
+                <h2>Personal contributions</h2>
+                <p>
+                    <ul>
+                        <li>Prototyping</li>
+                        <li>Feature implementation</li>
+                        <li>Implementation into the established structure</li>
+                        <li>Bugfixing support</li>
+                    </ul>
+                </p>
+            </div>
+            <div project-id="anjellyca" class="tab">
+                <h1>Anjellyca - get ready for a jiggly jello world</h1>
+                <!--Slideshow-->
+                <div class="stretchy-wrapper">
+                    <div class="slideshow-container">
+                        <div class="mySlides3 fade">
+                            <img class="slideImage" src="img/anjellyca_spin.gif">
+                            <div class="text">Jiggly Jelly Anjellyca</div>
+                        </div>
+                        <div class="mySlides3 fade">
+                            <iframe class="slideVideo Video" src="https://player.vimeo.com/video/911609369?h=6ffea42fb5&byline=0&portrait=0" frameborder="0" allowfullscreen></iframe>
+                            <script src="https://player.vimeo.com/api/player.js"></script>
+                        </div>
+                        <div class="mySlides3 fade">
+                            <iframe class="slideVideo Video" src="https://www.youtube-nocookie.com/embed/6Q-cCfhyPKk?si=YAhkvo-GeS6wOhe2&origin=https://chbroschinski.github.io" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1,2)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1,2)">&#10095;</a>
+                    </div>
+                </div>
+                <br>
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1, 2)"><img src="img/anjellyca_spin_image.png"></span>
+                    <span class="dot" onclick="currentSlide(2, 2)"><img src="img/anjellyca_trailer.png"></span>
+                    <span class="dot" onclick="currentSlide(3, 2)"><img src="img/anjellyca_featurepreview.jpg"></span>
+                </div>
+                <p><div class="download"><a href="https://sh4d0w-19.itch.io/anjellyca">Download Anjellyca on Itch.io</a></div></p>
+                <h2>Description</h2>
+                <p><i>Ever wanted a physics based wacky jump and run platformer puzzle game without jumping?</i></p>
+                <p>
+                    Anjellyca is exactly that, a mix of heavily movement oriented gameplay and interesting puzzles sprinkled in-between.
+                    Can't jump? No problem, you can make do by dashing, becoming one with objects and moving as them as well as
+                    making the world of physics work for you. <br> Wait.
+                    You didn't want a physics based wacky jump and run platformer puzzle game without jumping?
+                    But c'mone aren't you at least a bit intrigued?
+                </p>
+                <h2>Specifications</h2>
+                <p>
+                    <ul>
+                        <li>Platform: Windows</li>
+                        <li>Controls: Xbox/Playstation/Switch Pro controller or Keyboard and Mouse</li>
+                        <li>Developed with Unity engine</li>
+                    </ul>
+                </p>
+                <h2>Credits</h2>
+                <p>
+                    <ul>
+                        <li>
+                            Marlene Jüngling: <a href="https://www.linkedin.com/in/marlene-j%C3%BCngling-a8a6322a3/">Linkedin</a><br>
+                            Roles - Vision Keeper, Sound Manager, Assistant-Programmer, Tech Artist, Game Designer
+                        </li>
+                        <li>
+                            Liam Hermann: <a href="https://www.linkedin.com/in/liam-hermann-050008288/">Linkedin</a><br>
+                            Roles - Production Manager, Game Designer, VFX, SFX
+                        </li>
+                        <li>
+                            Sophie Leikina: <a href="https://www.linkedin.com/in/sophie-leikina-b7ba5b2ab/">Linkedin</a><br>
+                            Roles - 2D Artist, Concept Artist, 3D & Tech Artist
+                        </li>
+                        <li>
+                            Josia Meyer <br>
+                            Roles - Sound Designer, Sound Creator
+                        </li>
+                        <li>
+                            Chisaki Broschinski: <a href="https://www.linkedin.com/in/chisaki-broschinski-83a520298/">Linkedin</a><br>
+                            Roles - Main Programmer
+                        </li>
+                    </ul>
+                </p>
+                <h2>Personal contributions</h2>
+                <p>
+                    <ul>
+                        <li>UI images and implementation</li>
+                        <li>Character Controller</li>
+                        <li>Framework: Save system, level system, settings, input implementation (new Unity input system)</li>
+                        <li>Support and restructuring of Tolltips</li>
+                        <li>Menus for interactable objects</li>
+                        <li>Misc: Jelly wall behaviour, Marble run script, Ice shard collectible and inventory, Jelly trampoline</li>
+                        <li>Bugfixing support for everything</li>
+                    </ul>
+                </p>
+            </div>
+            <div project-id="monsterprincess" class="tab">
+                <h1>Monster Princess - a somewhat different love story</h1>
+                <!--Slideshow-->
+                <div class="stretchy-wrapper">
+                    <div class="slideshow-container">
+                        <div class="mySlides4 fade">
+                            <img class="slideImage" src="img/monster_princess.png">
+                        </div>
+                        <div class="mySlides4 fade">
+                            <img class="slideImage" src="img/monster_princess_preview_1.png">
+                            <div class="text">4 Levels including a tutorial stage</div>
+                        </div>
+                        <div class="mySlides4 fade">
+                            <img class="slideImage" src="img/monster_princess_preview_2.png">
+                            <div class="text">Build your own dungeon layout</div>
+                        </div>
+                        <div class="mySlides4 fade">
+                            <img class="slideImage" src="img/monster_princess_preview_3.png">
+                            <div class="text">Figure out the best traps and paths to kill your enemies</div>
+                        </div>
+                        <div class="mySlides4 fade">
+                            <iframe class="slideVideo Video" src="https://www.youtube-nocookie.com/embed/6IjU1pR9udU?si=7pNNOIPrtsS6QUoU&origin=https://chbroschinski.github.io" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1,3)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1,3)">&#10095;</a>
+                    </div>
+                </div>
+                <br>
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1, 3)"><img src="img/monster_princess.png"></span>
+                    <span class="dot" onclick="currentSlide(2, 3)"><img src="img/monster_princess_preview_1.png"></span>
+                    <span class="dot" onclick="currentSlide(3, 3)"><img src="img/monster_princess_preview_2.png"></span>
+                    <span class="dot" onclick="currentSlide(4, 3)"><img src="img/monster_princess_preview_3.png"></span>
+                    <span class="dot" onclick="currentSlide(5, 3)"><img src="img/monster_princess_featurepreview.png"></span>
+                </div>
+                <p><div class="download"><s><a>Download Monster Princess on Itch.io</a></s> (UNDER CONSTRUCTION)</div></p>
+                <h2>Description</h2>
+                <p><i>Get ready to revive your lost love.</i></p>
+                <p>
+                    In this Tower Defense game you're a monster, madly in love with a deceased human princess. By defending your tower from those who want to slay you,
+                    you gather their souls to finally reunite with her. Build your own dungeon layouts, utilize skills and traps while being enraptured by amazing
+                    sprite based fully animated artwork. Experience 3 different endings related to your highscore, and watch the story play out.
+                </p>
+                <h2>Specifications</h2>
+                <p>
+                    <ul>
+                        <li>Platform: Windows</li>
+                        <li>Controls: Keyboard and Mouse</li>
+                        <li>Developed with Unity engine</li>
+                    </ul>
+                </p>
+                <h2>Credits</h2>
+                <p>
+                    <ul>
+                        <li>
+                            Jenny: <a href="https://www.instagram.com/fa11ne/">Instagram</a><br>
+                            Roles - Vision Keeper, Illustrator (Endscreens, Title image)
+                        </li>
+                        <li>
+                            Aaliyah: <a href="https://miomiomii1.carrd.co/">Caard</a><br>
+                            Roles - Production Manager, 2D Artist
+                        </li>
+                        <li>
+                            Melissa: <a href="https://www.instagram.com/kiwibnui/">Instagram</a><br>
+                            Roles - 2D Artist, Rigger
+                        </li>
+                        <li>
+                            Aron Frankenberger: <a href="https://aron-frankenberger.jimdosite.com/">Website</a><br>
+                            Roles - Sound Designer, Sound Creator
+                        </li>
+                        <li>
+                            Alexander Primus: <a href="https://alexanderprimus.com/">Website</a><br>
+                            Roles - Sound Designer, Sound Creator
+                        </li>
+                        <li>
+                            Chisaki Broschinski: <a href="https://www.linkedin.com/in/chisaki-broschinski-83a520298/">Linkedin</a><br>
+                            Roles - Main Programmer
+                        </li>
+                    </ul>
+                </p>
+                <h2>Personal contributions</h2>
+                <p>
+                    <ul>
+                        <li>UI implementation</li>
+                        <li>Summary: All the code</li>
+                        <li>
+                            Long version: Integration of the 2D navmesh package, Character controls, Enemy behaviour, Traps and upgrade system, Health/Fight system, Dungeon Build mechanic,
+                            Unity implementation of sprites/animations (with the help of Aaliyah)/levels, Framework of levels/scenes/save states
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script> //Slideshow script, thanks w3schools, still had to fix it somehow tho so rip
+        let slideIndex = [1,1,1,1]; //id of the images
+        /* Class the members of each slideshow group with different CSS classes */
+        let slideId = ["mySlides1", "mySlides2","mySlides3","mySlides4"] //different slide groups, add to this array depending on number of slideshows; like ["mySlides1", "mySlides2"]
+        showSlides(1, 0);
+        showSlides(1, 1);
+        showSlides(1, 2);
+        showSlides(1, 3);
+
+        function plusSlides(n, no) {
+            showSlides(slideIndex[no] += n, no);
+        }
+        // Thumbnail image controls
+        function currentSlide(n, no) {
+            showSlides(slideIndex[no] = n, no);
+        }
+        function showSlides(n, no) { //n = number image; no = number of slideshow
+            let i;
+            let x = document.getElementsByClassName(slideId[no]);
+            if (n > x.length) { slideIndex[no] = 1 }
+            if (n < 1) { slideIndex[no] = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            // Check if x[slideIndex[no]-1] is defined before setting its style
+            if (x[slideIndex[no]-1]) {
+                x[slideIndex[no]-1].style.display = "block";
+            }
+
+            $('.Video').each(function() {
+                var el_src = $(this).attr("src");
+                $(this).attr("src",el_src);
+            });
+        }
+    </script>
+</body>
+</html>
